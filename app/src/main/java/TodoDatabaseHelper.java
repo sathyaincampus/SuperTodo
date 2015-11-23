@@ -16,6 +16,8 @@ public class TodoDatabaseHelper extends SQLiteOpenHelper {
         // Database Info
         private static final String DATABASE_NAME = "todoDatabase";
         private static final int DATABASE_VERSION = 1;
+        private static final String TAG = "ERROR";
+
 
         // Table Names
         private static final String TABLE_TODO = "todo";
@@ -110,7 +112,7 @@ public class TodoDatabaseHelper extends SQLiteOpenHelper {
             List<Todo> todos = new ArrayList<>();
 
             String TODO_SELECT_QUERY =
-                    String.format("SELECT * FROM %s",
+                    String.format("SELECT * FROM %s Where status!='DONE'",
                             TABLE_TODO);
 
             // "getReadableDatabase()" and "getWriteableDatabase()" return the same object (except under low

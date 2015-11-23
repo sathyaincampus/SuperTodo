@@ -6,6 +6,10 @@ public class Todo {
     public String desc;
     public String status;
 
+    public Todo(){
+
+    }
+
     public Todo(String desc, String status) {
         this.desc = desc;
         this.status = status;
